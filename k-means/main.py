@@ -80,7 +80,7 @@ def detect_tremor(video_path, threshold=30, min_movement_frames=5, pixels_per_mm
     return tremor_detected
 
 
-video_path = 'video2.mp4'
+video_path = '../video2.mp4'
 if not os.path.isfile(video_path):
     print("Файл не найден:", video_path)
 else:
