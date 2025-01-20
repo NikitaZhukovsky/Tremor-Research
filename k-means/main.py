@@ -10,7 +10,7 @@ def detect_tremor(video_path, threshold=30, min_movement_frames=5, pixels_per_mm
         return False
 
     frame_diffs = []
-    amplitudes = []  # Список для амплитуд
+    amplitudes = []
     ret, prev_frame = cap.read()
     if not ret:
         print("Не удалось прочитать первый кадр.")
@@ -41,7 +41,7 @@ def detect_tremor(video_path, threshold=30, min_movement_frames=5, pixels_per_mm
         movement = np.sum(diff)
         if movement > 1000:
             movement_frames += 1
-            amplitudes.append(movement)  # Сохраняем амплитуду
+            amplitudes.append(movement)
 
         total_frames += 1
         prev_frame_gray = frame_gray
@@ -80,7 +80,7 @@ def detect_tremor(video_path, threshold=30, min_movement_frames=5, pixels_per_mm
     return tremor_detected
 
 
-video_path = '../video2.mp4'
+video_path = 'video2.mp4'
 if not os.path.isfile(video_path):
     print("Файл не найден:", video_path)
 else:
